@@ -280,7 +280,7 @@ function drawParticles(cx, cy, outerR, innerR, tilt) {
     ctx.shadowColor = p.hue;
     ctx.strokeStyle = p.hue;
     ctx.globalAlpha = 0.18 + depth * 0.32;
-    ctx.lineWidth = 1.2;
+    ctx.lineWidth = 1.8;
     ctx.beginPath();
     ctx.moveTo(tailX, tailY);
     ctx.quadraticCurveTo(controlX, controlY, x, y);
