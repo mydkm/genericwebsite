@@ -37,7 +37,7 @@ function resize() {
   for (let i = 0; i < 450; i += 1) {
     particles.push({
       angle: Math.random() * Math.PI * 2,
-      speed: 0.03 + Math.random() * 0.01,
+      speed: 0.03 + Math.random() * 0.20,
       drift: 0.004 + Math.random() * 0.012,
       radialPhase: Math.random() * Math.PI * 2,
       radialSpeed: 0.008 + Math.random() * 0.01,
