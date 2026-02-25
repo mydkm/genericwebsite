@@ -1,0 +1,49 @@
+{
+  "blueprintVersion": 1,
+  "purpose": "Blueprint for adding project cards to the website feed in main/projects.json.",
+  "whereToEdit": "main/projects.json",
+  "requiredTopLevelFields": ["version", "projects"],
+  "projectObjectSchema": {
+    "name": "string (required)",
+    "status": "string (required) - suggested values: open source, closed source, research, private",
+    "tagline": "string (required)",
+    "description": "string (required)",
+    "stack": "string[] (required) - short technology tags",
+    "thumbnail": {
+      "url": "string (optional)",
+      "alt": "string (optional, recommended)"
+    },
+    "links": [
+      {
+        "label": "string (required)",
+        "href": "string (required)",
+        "external": "boolean (optional, default false)"
+      }
+    ]
+  },
+  "projectTemplate": {
+    "name": "Project Name",
+    "status": "open source",
+    "tagline": "One-line positioning statement",
+    "description": "Two to four sentences describing capability, users, and current scope.",
+    "stack": ["go", "typescript", "postgres"],
+    "thumbnail": {
+      "url": "/assets/project-name-preview.jpg",
+      "alt": "Project interface preview"
+    },
+    "links": [
+      {
+        "label": "View Source on GitHub",
+        "href": "https://github.com/your-org/your-repo",
+        "external": true
+      }
+    ]
+  },
+  "workflow": [
+    "Copy projectTemplate into main/projects.json under the projects array.",
+    "Replace placeholder values with real project content.",
+    "Keep stack tags short and lowercase for visual consistency.",
+    "Use external=true for off-site links so they open in a new tab.",
+    "If no thumbnail is provided, the card will render a themed placeholder panel."
+  ]
+}

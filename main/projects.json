@@ -1,0 +1,85 @@
+{
+  "version": 1,
+  "projects": [
+    {
+      "name": "Helios Control",
+      "status": "open source",
+      "tagline": "Realtime shot orchestration for tokamak experiments",
+      "description": "A control-plane toolkit for scheduling pulse sequences, validating actuator constraints, and streaming deterministic machine events into archived experiment timelines.",
+      "stack": ["go", "typescript", "postgres", "kubernetes"],
+      "links": [
+        {
+          "label": "View Source on GitHub",
+          "href": "https://github.com/",
+          "external": true
+        }
+      ]
+    },
+    {
+      "name": "PlasmaScope",
+      "status": "research",
+      "tagline": "Tokamak diagnostics visualization workspace",
+      "description": "An analysis console for magnetics, bolometry, and interferometry streams with synchronized replay and event annotation for post-shot review.",
+      "stack": ["python", "rust", "wasm"],
+      "links": [
+        {
+          "label": "Technical Brief",
+          "href": "/blog"
+        }
+      ]
+    },
+    {
+      "name": "FluxGraph",
+      "status": "closed source",
+      "tagline": "Hybrid graph + vector retrieval for experiment logs",
+      "description": "A search engine that joins telemetry vectors with operator notes and procedural graphs to support failure-mode analysis and recovery planning.",
+      "stack": ["zig", "rust", "protobuf"],
+      "links": [
+        {
+          "label": "Request Demo",
+          "href": "#contact"
+        }
+      ]
+    },
+    {
+      "name": "Neutron Ledger",
+      "status": "open source",
+      "tagline": "Structured runbook and incident ledger",
+      "description": "Run-centric documentation tools that map each machine state transition to context, outcomes, and reproducible operator steps.",
+      "stack": ["typescript", "bun", "sqlite"],
+      "links": [
+        {
+          "label": "View Source on GitHub",
+          "href": "https://github.com/",
+          "external": true
+        }
+      ]
+    },
+    {
+      "name": "Q-Control Sandbox",
+      "status": "private",
+      "tagline": "Physics-informed control policy prototyping",
+      "description": "A simulation harness for testing policy candidates against synthetic drift, coil latency, and power-system uncertainty before on-device trials.",
+      "stack": ["python", "jax", "docker"],
+      "links": [
+        {
+          "label": "Contact for Access",
+          "href": "#contact"
+        }
+      ]
+    },
+    {
+      "name": "Ignition Docs",
+      "status": "open source",
+      "tagline": "Knowledge base for fusion software teams",
+      "description": "A lightweight documentation portal with API snapshots, architecture maps, and operational checklists for new team onboarding.",
+      "stack": ["astro", "mdx", "github actions"],
+      "links": [
+        {
+          "label": "Visit Site",
+          "href": "/"
+        }
+      ]
+    }
+  ]
+}

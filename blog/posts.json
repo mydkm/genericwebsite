@@ -1,0 +1,10 @@
+{
+  "posts": [
+    {
+      "title": "Template Post: Lorem Showcase",
+      "date": "2026-02-25",
+      "excerpt": "A template entry demonstrating long-form paragraphs, emphasized text, code snippets, links, blockquotes, and list structures for future posts.",
+      "href": "/blog/template-post/"
+    }
+  ]
+}

@@ -2,10 +2,10 @@ const canvas = document.getElementById("tokamak");
 const ctx = canvas.getContext("2d");
 
 const palette = [
-  "rgba(155, 90, 255, 0.7)",
-  "rgba(255, 70, 190, 0.8)",
-  "rgba(110, 80, 255, 0.7)",
-  "rgba(255, 120, 40, 0.75)",
+  "rgba(178, 90, 255, 0.72)",
+  "rgba(248, 84, 175, 0.74)",
+  "rgba(123, 92, 255, 0.72)",
+  "rgba(255, 140, 74, 0.7)",
 ];
 
 const stars = [];
@@ -58,13 +58,13 @@ function drawBackground() {
     height * 0.35,
     height * 0.7
   );
-  gradient.addColorStop(0, "rgba(40, 12, 60, 0.65)");
-  gradient.addColorStop(0.4, "rgba(12, 8, 26, 0.9)");
-  gradient.addColorStop(1, "rgba(4, 4, 10, 1)");
+  gradient.addColorStop(0, "rgba(88, 34, 119, 0.62)");
+  gradient.addColorStop(0.4, "rgba(31, 13, 53, 0.9)");
+  gradient.addColorStop(1, "rgba(6, 5, 16, 1)");
   ctx.fillStyle = gradient;
   ctx.fillRect(0, 0, width, height);
 
-  ctx.fillStyle = "rgba(255, 255, 255, 0.6)";
+  ctx.fillStyle = "rgba(244, 220, 255, 0.5)";
   stars.forEach((star) => {
     ctx.globalAlpha = star.a;
     ctx.beginPath();
@@ -80,9 +80,9 @@ function drawTokamakShell(cx, cy, outerR, innerR, tilt) {
   ctx.scale(1, tilt);
 
   const glow = ctx.createRadialGradient(0, 0, innerR * 0.2, 0, 0, outerR);
-  glow.addColorStop(0, "rgba(90, 40, 170, 0.32)");
-  glow.addColorStop(0.4, "rgba(180, 80, 255, 0.38)");
-  glow.addColorStop(0.8, "rgba(255, 110, 200, 0.34)");
+  glow.addColorStop(0, "rgba(122, 52, 174, 0.32)");
+  glow.addColorStop(0.4, "rgba(184, 78, 255, 0.36)");
+  glow.addColorStop(0.8, "rgba(255, 95, 180, 0.31)");
   glow.addColorStop(1, "rgba(0, 0, 0, 0)");
   ctx.fillStyle = glow;
   ctx.beginPath();
@@ -95,7 +95,7 @@ function drawTokamakShell(cx, cy, outerR, innerR, tilt) {
   ctx.fill();
   ctx.globalCompositeOperation = "source-over";
 
-  ctx.strokeStyle = "rgba(200, 140, 255, 0.38)";
+  ctx.strokeStyle = "rgba(203, 122, 255, 0.38)";
   ctx.lineWidth = 2;
   ctx.beginPath();
   ctx.arc(0, 0, outerR, 0, Math.PI * 2);
@@ -109,13 +109,13 @@ function drawVacuumVessel(cx, cy, outerR, tilt) {
   ctx.translate(cx, cy);
   ctx.scale(1, tilt);
 
-  ctx.strokeStyle = "rgba(255, 180, 200, 0.25)";
+  ctx.strokeStyle = "rgba(143, 98, 230, 0.28)";
   ctx.lineWidth = 4;
   ctx.beginPath();
   ctx.ellipse(0, 0, outerR * 1.02, outerR * 0.62, 0, 0, Math.PI * 2);
   ctx.stroke();
 
-  ctx.strokeStyle = "rgba(255, 120, 140, 0.22)";
+  ctx.strokeStyle = "rgba(233, 112, 196, 0.24)";
   ctx.lineWidth = 2;
   ctx.beginPath();
   ctx.ellipse(0, 0, outerR * 0.92, outerR * 0.55, 0, 0, Math.PI * 2);
@@ -129,7 +129,7 @@ function drawSeparatrix(cx, cy, outerR, tilt) {
   ctx.translate(cx, cy);
   ctx.scale(1, tilt);
 
-  ctx.strokeStyle = "rgba(255, 120, 90, 0.3)";
+  ctx.strokeStyle = "rgba(255, 145, 88, 0.32)";
   ctx.lineWidth = 2;
   ctx.beginPath();
   ctx.moveTo(-outerR * 0.65, outerR * 0.18);
@@ -161,8 +161,8 @@ function drawTokamakHardware(cx, cy, outerR, tilt) {
 
   const columnWidth = outerR * 0.2;
   const columnHeight = outerR * 1.05;
-  ctx.fillStyle = "rgba(255, 120, 150, 0.28)";
-  ctx.strokeStyle = "rgba(255, 150, 180, 0.45)";
+  ctx.fillStyle = "rgba(90, 51, 149, 0.28)";
+  ctx.strokeStyle = "rgba(199, 105, 255, 0.44)";
   ctx.lineWidth = 2;
   ctx.beginPath();
   ctx.roundRect(
@@ -175,7 +175,7 @@ function drawTokamakHardware(cx, cy, outerR, tilt) {
   ctx.fill();
   ctx.stroke();
 
-  ctx.strokeStyle = "rgba(255, 120, 90, 0.4)";
+  ctx.strokeStyle = "rgba(255, 144, 82, 0.37)";
   ctx.lineWidth = 3;
   for (let i = -2; i <= 2; i += 1) {
     const yOffset = i * outerR * 0.15;
@@ -184,7 +184,7 @@ function drawTokamakHardware(cx, cy, outerR, tilt) {
     ctx.stroke();
   }
 
-  ctx.strokeStyle = "rgba(255, 110, 80, 0.38)";
+  ctx.strokeStyle = "rgba(255, 121, 63, 0.36)";
   ctx.lineWidth = 2;
   for (let i = 0; i < 10; i += 1) {
     const angle = (Math.PI * 2 * i) / 10;
@@ -208,7 +208,7 @@ function drawFluxSurfaces(cx, cy, outerR, innerR, tilt) {
     const t = i / (count - 1);
     const rx = innerR + (outerR * 0.85 - innerR) * t;
     const ry = rx * 0.62;
-    ctx.strokeStyle = `rgba(180, 120, 255, ${0.08 + t * 0.08})`;
+    ctx.strokeStyle = `rgba(140, 101, 246, ${0.08 + t * 0.08})`;
     ctx.lineWidth = 1.4;
     ctx.beginPath();
     ctx.ellipse(0, 0, rx, ry, 0, 0, Math.PI * 2);
@@ -227,7 +227,7 @@ function drawHelicalLines(cx, cy, outerR, innerR, tilt) {
   for (let i = 0; i < layers; i += 1) {
     const phase = time * 0.01 + i * (Math.PI / 2);
     const base = innerR + (outerR - innerR) * (0.25 + i * 0.18);
-    ctx.strokeStyle = `rgba(255, 120, 220, ${0.18 + i * 0.05})`;
+    ctx.strokeStyle = `rgba(255, 108, 183, ${0.16 + i * 0.05})`;
     ctx.lineWidth = 1.5;
     ctx.beginPath();
     for (let t = 0; t <= Math.PI * 2.2; t += 0.08) {
